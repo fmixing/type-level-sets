@@ -87,7 +87,8 @@ library
                         Data.Union
                         
   build-depends:        base < 5,
-                        ghc-prim
+                        ghc-prim,
+                        containers
 
 test-suite exercises-test
   type: exitcode-stdio-1.0
