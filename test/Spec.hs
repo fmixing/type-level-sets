@@ -8,12 +8,12 @@ import Data.Type.Equality
 import Data.Type.Bool
 import Data.Typeable (Typeable, typeOf)
 import Data.Functor.Identity (Identity(..))
-import Data.Union (Union, Union'( MkUnion ))
+import Data.Union (Set, Union (MkUnion), ulift, umatch)
 
-a :: Union Identity '[Int, Bool, Char]
+a :: Union Identity (Data.Union.Set '[Int, Bool, Char])
 a = MkUnion (Identity True)
 
-f :: Union Identity '[Bool, Char, Int] -> ()
+f :: Union Identity (Data.Union.Set '[Bool, Char, Int]) -> ()
 f _ = ()
 
 x = f a
