@@ -84,11 +84,14 @@ library
 
   exposed-modules:      Data.Type.Set
                         Data.Type.Map
+                        Data.ImprovedSet
                         Data.Union
+                        Data.Rec
                         
   build-depends:        base < 5,
                         ghc-prim,
-                        containers
+                        containers,
+                        dependent-map
 
 test-suite exercises-test
   type: exitcode-stdio-1.0

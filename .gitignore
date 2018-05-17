@@ -1,3 +1,7 @@
 .stack-work
 .ghc.environment.*
 dist-newstyle/
+dist/
+test/Spec.hi
+test/Spec.o
+test/Spec
