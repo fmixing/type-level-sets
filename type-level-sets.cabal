@@ -87,6 +87,7 @@ library
                         Data.ImprovedSet
                         Data.Union
                         Data.Rec
+                        Data.Handler
                         
   build-depends:        base < 5,
                         ghc-prim,

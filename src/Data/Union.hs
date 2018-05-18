@@ -17,7 +17,7 @@ data Union :: (k -> *) -> TSet k -> * where
   MkUnion :: (Typeable a, IsElem a xs ~ True) => f a -> Union f xs
 
 -- ulift взять элемент и обернуть его в union, например из f Int получить Union f [Int, Bool, Char]
--- union = ulift (Identity True) :: Union Identity (Data.Union.Set '[Int, Bool, Char])
+-- union = ulift (Identity True) :: Union Identity (Data.ImprovedSet.Set '[Int, Bool, Char])
 ulift :: (Typeable a, IsElem a as ~ True) => f a -> Union f as
 ulift = MkUnion
 

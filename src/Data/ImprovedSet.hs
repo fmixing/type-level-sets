@@ -15,11 +15,6 @@ import Data.Set as S (Set, empty, member, insert)
 
 type instance Cmp (n :: k) (m :: k) = CmpTypeNonDet n m
 
--- data T (a :: k)
-
--- type family BetterCmpType (a :: k1) (b :: k2) :: Ordering where
---   BetterCmpType a b = CmpTypeNonDet (T a) (T b)
-
 newtype TSet k = MkTSet [k]
 
 type Set xs = MkTSet (Nub (Sort xs))
