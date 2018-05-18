@@ -1,5 +1,5 @@
 {-# LANGUAGE DataKinds, TypeOperators, TypeFamilies, GADTs, PolyKinds, UndecidableInstances #-}
-{-# LANGUAGE FlexibleContexts, AllowAmbiguousTypes, RankNTypes, EmptyDataDecls, ScopedTypeVariables, TypeApplications, FlexibleInstances #-}
+{-# LANGUAGE FlexibleContexts, AllowAmbiguousTypes, RankNTypes, ScopedTypeVariables, TypeApplications, FlexibleInstances #-}
 
 module Data.ImprovedSet (Data.ImprovedSet.Set, IsElem, IsSubset, TSet, KnownTSet, knownTSet, Merge) where
 
@@ -13,12 +13,12 @@ import Data.Functor.Identity (Identity(..))
 import Unsafe.Coerce (unsafeCoerce)
 import Data.Set as S (Set, empty, member, insert)
 
-type instance Cmp (n :: k) (m :: k) = BetterCmpType n m
+type instance Cmp (n :: k) (m :: k) = CmpTypeNonDet n m
 
-data T (a :: k)
+-- data T (a :: k)
 
-type family BetterCmpType (a :: k1) (b :: k2) :: Ordering where
-  BetterCmpType a b = CmpTypeNonDet (T a) (T b)
+-- type family BetterCmpType (a :: k1) (b :: k2) :: Ordering where
+--   BetterCmpType a b = CmpTypeNonDet (T a) (T b)
 
 newtype TSet k = MkTSet [k]
 
