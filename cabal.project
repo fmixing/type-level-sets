@@ -1,2 +1,8 @@
-packages: *.cabal ~/Downloads/dependent-sum-master/dependent-sum.cabal ~/Downloads/dependent-map-master/dependent-map.cabal
+packages: 
+  *.cabal 
+  ~/Downloads/dependent-sum-master/dependent-sum.cabal 
+  ~/Downloads/dependent-map-master/dependent-map.cabal
+
 with-compiler: /usr/local/bin/ghc-8.4.2
+
+tests: True

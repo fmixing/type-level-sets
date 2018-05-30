@@ -40,3 +40,7 @@ urestrict union@(MkUnion (fx :: f x)) =
     if (S.member (SomeTypeRep (typeRep @x)) (knownTSet @_ @xs)) 
     then Just $ unsafeCoerce union 
     else Nothing
+
+instance Show (Union f as)
+  where
+    show _ = "Union"

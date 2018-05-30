@@ -5,3 +5,4 @@ dist/
 test/Spec.hi
 test/Spec.o
 test/Spec
+bench/
